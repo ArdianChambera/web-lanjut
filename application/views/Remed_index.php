@@ -27,7 +27,9 @@
 
 	<div class="container">
 
-		<table class="table table-bordered table-sm">
+		<?php echo $this->session->flashdata('pesan_berhasil')?>
+
+		<table class="table table-bordered table-sm table-striped table-hover">
 			<tr>
 				<th width="10%">No</th>
 				<th>ID_12</th>
@@ -46,7 +48,7 @@
 				<td><?= $key->kelas ?></td>
 				<td><?= $key->isi ?></td>
 				<td>
-					<a href="" class="btn btn-info btn-sm">Edit</a>
+					<a href="" class="btn btn-warning btn-sm">Edit</a>
 					<a href="" class="btn btn-danger btn-sm">Hapus</a>
 				</td>
 			</tr>

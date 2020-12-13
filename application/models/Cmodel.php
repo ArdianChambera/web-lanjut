@@ -8,9 +8,10 @@ class Cmodel extends CI_Model {
 		// select+from mahasiswa
 		return $this->db->get('c_table')->result();
 	}
-	public function simpan_data($object)
+
+	public function add($data_input)
 	{
-		 $this->db->insert('c_table',$object);
+		$this->db->insert('c_table', $data_input);
 	}
 
 }

@@ -25,15 +25,30 @@ class Ccontroller extends CI_Controller
 
 	public function simpan_data()
 	{
-		$data = array(
-			'id_12' 		=> $this->input->post('id_12'),
-			'jurusan' 		=> $this->input->post('jurusan'),
-			'kelas' 		=> $this->input->post('kelas'),
-			'isi'			=> $this->input->post('isi'),
-		);
+		$id_12 			= $this->input->post('txtid_12');
+		$jurusan 		= $this->input->post('txtjurusan');
+		$kelas 			= $this->input->post('txtkelas');
+		$isi			= $this->input->post('txtisi');
+
+		$data = [
+			'id_12' 		=> $id_12,
+			'jurusan' 		=> $jurusan,
+			'kelas' 		=> $kelas,
+			'isi'			=> $isi
+		];
 
 		// print_r($data)
-		$this->Cmodel->simpan_data($data);
+		$simpan = $this->Cmodel->add($data);
+
+		$this->session->set_flashdata('pesan_berhasil', '
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			  Data Berhasil Di Tambahkan !
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+		</div>
+		');
+
 		redirect('Ccontroller/index');
 	}
 }

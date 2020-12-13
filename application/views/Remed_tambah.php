@@ -21,36 +21,31 @@
 		Data Table Mahasiswa
 	</div>
 	<hr>
-	<form class="container">
-		<form action="<?= site_url('Ccontroller/simpan_data')?>"metode="post">
+	<div class="container">
+		<form method="post" action="<?= site_url('Ccontroller/simpan_data')?>">
 			<div class="form-group">
 				<label for="">ID_12</label>
-				<input type="number" name="id_12" class="form-control">
+				<input type="text" name="txtid_12" class="form-control">
 			</div>
 			<div class="form-group">
 				<label for="">jurusan</label>
-				<input type="text" name="jurusan" class="form-control">
+				<input type="text" name="txtjurusan" class="form-control">
 			</div>
 			<div class="form-group">
 				<label for="">kelas</label>
-				<input type="text" name="kelas" class="form-control">
+				<input type="text" name="txtkelas" class="form-control">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="">isi</label>
-				<textarea class="form-control" name="kelas"></textarea>
+				<textarea class="form-control" name="txtisi"></textarea>
 			</div>
-			<div class="form-group">
-				<br>
-					<div>
-						<input type="submit" name="submit" class="btn btn-primary" value="Simpan Data">
-						<a href="<?= site_url('Ccontroller')?>" class="btn btn-primary">Kembali</a>
-					</div>
-					
-			
-			</div>
+
+			<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
+			<a href="<?= site_url('Ccontroller')?>" class="btn btn-primary">Kembali</a>
+
 		</form>
-		</form>
+	</div>
 
 </body>
 </html>
